@@ -19,10 +19,10 @@ environment = SubResource("Environment_mundo")
 transform = Transform3D(-0.92794913, -0.37191513, -0.024023443, 0.18860032, -0.5242783, 0.8304064, -0.3214092, 0.76602006, 0.5566953, 0, 5, 0)
 shadow_enabled = true
 
-[node name="CamaraFija" type="Camera3D" parent="." unique_id=1983634112]
-transform = Transform3D(1, 0, 0, 0, 0.866, 0.5, 0, -0.5, 0.866, 0, 6, 10)
-
 [node name="Jugador" parent="." unique_id=514314760 groups=["player"] instance=ExtResource("1_jug")]
+
+[node name="CamaraFija" type="Camera3D" parent="Jugador" unique_id=1983634112]
+transform = Transform3D(1, 0, 0, 0, 0.86601907, 0.500011, 0, -0.500011, 0.86601907, 0, 6, 10)
 
 [node name="Enemigo" parent="." unique_id=1743107430 instance=ExtResource("2_ene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
