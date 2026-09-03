@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3kl8yxl7xa5q"]
 
-[ext_resource type="PackedScene" path="res://Jugador.tscn" id="1_jug"]
+[ext_resource type="PackedScene" uid="uid://hex2mwwb0f31" path="res://Jugador.tscn" id="1_jug"]
 [ext_resource type="PackedScene" path="res://Enemigo.tscn" id="2_ene"]
 [ext_resource type="PackedScene" path="res://Puerta.tscn" id="3_pue"]
 [ext_resource type="PackedScene" path="res://Piso.tscn" id="4_0b6j0"]
@@ -22,7 +22,7 @@ shadow_enabled = true
 [node name="CamaraFija" type="Camera3D" parent="." unique_id=1983634112]
 transform = Transform3D(1, 0, 0, 0, 0.866, 0.5, 0, -0.5, 0.866, 0, 6, 10)
 
-[node name="Jugador" parent="." unique_id=514314760 instance=ExtResource("1_jug")]
+[node name="Jugador" parent="." unique_id=514314760 groups=["player"] instance=ExtResource("1_jug")]
 
 [node name="Enemigo" parent="." unique_id=1743107430 instance=ExtResource("2_ene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
