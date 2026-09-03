@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 			_frenar(delta)
 		Estado.HUIR:
 			_moverse_lejos_de(jugador.global_position, delta)
-
+	
 	move_and_slide()
 
 
