@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var fuerza_salto: float = 3.0
 @export var aceleracion: float = 10.0
 @export var friccion: float = 15.0
+@onready var spring_arm = $SpringArm3D
 
 
 func _ready() -> void:
@@ -23,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	var direction := camara.global_basis * entrada
 	direction.y = 0.0
 	direction = direction.normalized()
-
+	rotation.y = spring_arm.rotation.y
 	# TODO (Tarea 3): esto asigna la velocidad DE GOLPE. Reemplazar por
 	# move_toward con aceleración y fricción, como en la Sesión 9.
 	var objetivo := direction * speed
