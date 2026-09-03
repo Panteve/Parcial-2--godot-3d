@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0hsuqscf0jsj" path="res://Assets/jugador.gd" id="1_jug"]
 [ext_resource type="Script" uid="uid://jlocdja3c3p4" path="res://Assets/camara_orbital.gd" id="2_cam"]
+[ext_resource type="Script" uid="uid://8bqyoueq03ot" path="res://Assets/zona_atacar.gd" id="3_ucnt4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jug"]
 radius = 0.35
@@ -14,7 +15,9 @@ albedo_color = Color(0.2, 0.45, 0.85, 1)
 radius = 0.35
 height = 1.75
 
-[node name="Cuerpo" type="CharacterBody3D" unique_id=1427482227 node_paths=PackedStringArray("camara")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_uxa2c"]
+
+[node name="Cuerpo" type="CharacterBody3D" unique_id=1427482227 node_paths=PackedStringArray("camara") groups=["player"]]
 script = ExtResource("1_jug")
 camara = NodePath("SpringArm3D/Camera3D")
 
@@ -35,3 +38,10 @@ script = ExtResource("2_cam")
 objetivo = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1392803833]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1029115555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.049345, -0.97763467)
+script = ExtResource("3_ucnt4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1714730166]
+shape = SubResource("SphereShape3D_uxa2c")

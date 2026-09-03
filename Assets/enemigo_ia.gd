@@ -92,6 +92,9 @@ func _decidir_estado(distancia: float, lo_veo: bool) -> Estado:
 func recibir_dano(cantidad: float) -> float:
 	vida = max(vida - cantidad, 0.0)
 	# TODO: agregar aquí el flash y las partículas.
+	var material := mesh.get_surface_override_material(0) as StandardMaterial3D
+	Efectos.flash(material,"albedo_color", Color.WHITE, 0.08, self)
+	Efectos.particulas(particulas_impacto)
 	return vida
 
 
