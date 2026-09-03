@@ -1,30 +1,33 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene format=3 uid="uid://d3kl8yxl7xa5q"]
 
 [ext_resource type="PackedScene" path="res://Jugador.tscn" id="1_jug"]
 [ext_resource type="PackedScene" path="res://Enemigo.tscn" id="2_ene"]
 [ext_resource type="PackedScene" path="res://Puerta.tscn" id="3_pue"]
+[ext_resource type="PackedScene" path="res://Piso.tscn" id="4_0b6j0"]
 
 [sub_resource type="Environment" id="Environment_mundo"]
 background_mode = 2
 ambient_light_source = 3
 reflected_light_source = 2
 
-[node name="Nivel" type="Node3D"]
+[node name="Nivel" type="Node3D" unique_id=106727327]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1293801261]
 environment = SubResource("Environment_mundo")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.866, 0, 0.5, 0.383, 0.6428, -0.6634, -0.3214, 0.766, 0.5567, 0, 5, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=472473571]
+transform = Transform3D(-0.92794913, -0.37191513, -0.024023443, 0.18860032, -0.5242783, 0.8304064, -0.3214092, 0.76602006, 0.5566953, 0, 5, 0)
 shadow_enabled = true
 
-[node name="CamaraFija" type="Camera3D" parent="."]
+[node name="CamaraFija" type="Camera3D" parent="." unique_id=1983634112]
 transform = Transform3D(1, 0, 0, 0, 0.866, 0.5, 0, -0.5, 0.866, 0, 6, 10)
 
-[node name="Jugador" parent="." instance=ExtResource("1_jug")]
+[node name="Jugador" parent="." unique_id=514314760 instance=ExtResource("1_jug")]
 
-[node name="Enemigo" parent="." instance=ExtResource("2_ene")]
+[node name="Enemigo" parent="." unique_id=1743107430 instance=ExtResource("2_ene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
 
-[node name="Puerta" parent="." instance=ExtResource("3_pue")]
+[node name="Puerta" parent="." unique_id=381696312 instance=ExtResource("3_pue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+
+[node name="Piso" parent="." unique_id=1116868945 instance=ExtResource("4_0b6j0")]
