@@ -36,6 +36,6 @@ func _physics_process(delta: float) -> void:
 	# aunque no exista ningún piso en la escena.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	elif Input.is_action_just_pressed("saltar"):
+	elif Input.is_action_pressed("saltar"):
 		velocity.y = fuerza_salto
 	move_and_slide()
